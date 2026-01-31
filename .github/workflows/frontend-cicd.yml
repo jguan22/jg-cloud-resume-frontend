@@ -20,3 +20,6 @@ jobs:
 
       - name: Deploy to S3
         run: aws s3 sync . s3://jg-cloud-resume --delete --exclude ".git/*" --exclude ".github/*"
+      
+      - name: Create CloudFront Invalidation
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
