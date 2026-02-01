@@ -1,42 +1,51 @@
-:root {
-    --primary-color: #2563eb;
-    --text-color: #1f2937;
-    --bg-color: #f3f4f6;
-}
-
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #1e293b;
 }
 
 .resume-card {
     background: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
 }
 
 h1 {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--bg-color);
-    padding-bottom: 10px;
+    font-size: 2.25rem;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+    letter-spacing: -0.025em;
+}
+
+.tech-stack {
+    color: #64748b;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1rem;
 }
 
 .counter-box {
-    margin-top: 30px;
-    padding: 15px;
-    background: #eff6ff;
-    border-radius: 6px;
-    text-align: center;
-    font-weight: bold;
+    background-color: #f1f5f9;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 600;
 }
 
 #counter {
-    color: var(--primary-color);
-    font-size: 1.2rem;
+    color: #2563eb;
+    font-size: 1.5rem;
 }
