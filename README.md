@@ -30,7 +30,7 @@ This project uses the **AWS SAM CLI** to manage the lifecycle of this applicatio
 
 * **style.css**: Custom styling for a clean, modern look.
 
-* **JavaScript(inline)**: JavaScript logic to call the backend Lambda function.
+* **JavaScript**: JavaScript logic to call the backend Lambda function.
 
 ## Technical Highlights
 * **HTTPS Everywhere**: Secured via CloudFront with an SSL/TLS certificate.
