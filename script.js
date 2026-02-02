@@ -1,4 +1,4 @@
-async function updateCounter() {
+async function updateCounter(params) {
     const counterElement = document.getElementById('counter');
     const apiUrl = "https://sxhyoqf9nf.execute-api.us-east-1.amazonaws.com/Prod/counter";
 
