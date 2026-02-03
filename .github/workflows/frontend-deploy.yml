@@ -24,8 +24,8 @@ jobs:
 
       - name: Ensure CSS and js Content-Type
         run: |
-          aws s3 cp s3://jg-cloud-resume/style.css s3://jg-cloud-resume/style.css --metadata-directive REPLACE --content-type "text/css"
-          aws s3 cp s3://jg-cloud-resume/script.js s3://jg-cloud-resume/script.js --metadata-directive REPLACE --content-type "application/javascript"
+          aws s3 cp style.css s3://jg-cloud-resume/style.css --content-type "text/css; charset=utf-8"
+          aws s3 cp script.js s3://jg-cloud-resume/script.js --content-type "application/javascript; charset=utf-8"
       
       - name: Invalidate CloudFront Cache
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
