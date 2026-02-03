@@ -22,7 +22,7 @@ jobs:
       - name: Deploy to S3
         run: aws s3 sync . s3://jg-cloud-resume --delete --exclude ".git/*" --exclude ".github/*"
 
-      - name: Ensure CSS Content-Type
+      - name: Ensure CSS and js Content-Type
         run: |
           aws s3 cp s3://jg-cloud-resume/style.css s3://jg-cloud-resume/style.css --metadata-directive REPLACE --content-type "text/css"
           aws s3 cp s3://jg-cloud-resume/script.js s3://jg-cloud-resume/script.js --metadata-directive REPLACE --content-type "application/javascript"
