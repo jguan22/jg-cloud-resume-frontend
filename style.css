@@ -1,51 +1,125 @@
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f8fafc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    color: #1e293b;
+/* Color Variables */
+:root {
+    --bg-color: #0f172a;
+    --text-color: #e2e8f0;
+    --accent-color: #38bdf8;
+    --secondary-bg: #1e293b;
+    --muted-text: #94a3b8;
+    --tech-tag: #7dd3fc;
 }
 
-.resume-card {
-    background: white;
-    padding: 3rem;
-    border-radius: 1rem;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 90%;
+body {
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Header & Contact */
+header {
     text-align: center;
+    border-bottom: 2px solid var(--secondary-bg);
+    padding-bottom: 40px;
 }
 
 h1 {
-    font-size: 2.25rem;
-    margin-bottom: 0.5rem;
-    color: #0f172a;
-    letter-spacing: -0.025em;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.contact-info {
+    font-size: 0.9rem;
+    color: var(--muted-text);
+}
+
+.contact-info a {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Sections */
+section {
+    margin-top: 40px;
+}
+
+h2 {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 15px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+}
+
+/* Resume Entries */
+.entry {
+    margin-bottom: 30px;
+    background: var(--secondary-bg);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.entry:hover {
+    transform: translateY(-2px);
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.entry-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--accent-color);
 }
 
 .tech-stack {
-    color: #64748b;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 1rem;
+    font-size: 0.85rem;
+    color: var(--tech-tag);
+    font-style: italic;
+    margin-bottom: 10px;
 }
 
-.counter-box {
-    background-color: #f1f5f9;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    display: inline-block;
-    margin-top: 1rem;
-    font-weight: 600;
+ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* Visitor Counter Widget */
+#counter-box {
+    text-align: center;
+    margin-top: 60px;
+    padding: 20px;
+    border: 1px dashed var(--accent-color);
+    border-radius: 10px;
+    background-color: rgba(56, 189, 248, 0.05);
 }
 
 #counter {
-    color: #2563eb;
-    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    font-size: 1.1rem;
 }
