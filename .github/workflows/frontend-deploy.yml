@@ -1,44 +1,50 @@
-name: Frontend Deploy
+name: Deploy React Portfolio to AWS S3 and CloudFront
 
 on:
   push:
     branches:
-      - main
+      - main  # Set this to your default branch (e.g., main or master)
 
 jobs:
   deploy:
+    name: Build & Deploy Portfolio to AWS
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      # Step 1: Checkout the code from GitHub repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # 1. Set up Node.js environment required to build the app
+      # Step 2: Set up Node.js environment
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'npm' # Speeds up subsequent runs by caching node_modules
+          cache: 'npm'
 
-      # 2. Install dependencies (React, Vite, Tailwind, etc.)
-      - name: Install dependencies
+      # Step 3: Install all packages/dependencies
+      - name: Install Dependencies
         run: npm ci
 
-      # 3. Compile the .tsx files into standard browser-readable HTML/JS
-      - name: Build production bundle
+      # Step 4: Compile/Build the React asset bundles via Vite
+      - name: Build Application
         run: npm run build
+        # Note: Vite compiles static files directly into the 'dist/' folder by default.
 
-      # 4. Authenticate with AWS
+      # Step 5: Configure AWS Credentials with Secrets
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+          aws-region: us-east-1  # Set this to the AWS region hosting your bucket (e.g., us-east-1)
 
-      # 5. Sync ONLY the compiled 'dist' folder to the root of your S3 bucket
-      - name: Deploy to S3
-        run: aws s3 sync dist/ s3://jg-cloud-resume --delete
+      # Step 6: Sync Vite's compiled 'dist/' output directly to the target S3 Bucket
+      - name: Synchronize Static Files to S3
+        run: |
+          aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET_NAME }} --delete
 
-      # 6. Clear CloudFront CDN edge caches
-      - name: Invalidate CloudFront Cache
-        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+      # Step 7: Invalidate the CloudFront Distribution cache to instantly publish updates live
+      - name: Invalidate CloudFront Distribution Cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
