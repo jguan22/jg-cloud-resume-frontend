@@ -1,20 +1,40 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Cloud Resume Challenge - Frontend
+This repository contains the frontend files (HTML, CSS, and JavaScript) for my Cloud Resume project. The site is hosted as a highly available, global website using **Amazon S3** and **Amazon CloudFront**.
 
-# Run and deploy your AI Studio app
+---
 
-This contains everything you need to run your app locally.
+## Frontend Architecture
+The frontend is built to be "Serverless" and optimized for speed:
 
-View your app in AI Studio: https://ai.studio/apps/0c4ad867-c323-4fb3-9c75-6864ddf944d6
+* **Amazon S3**: Hosts the static website files (index.html, style.css, etc.).
 
-## Run Locally
+* **Amazon CloudFront**: Acts as a Content Delivery Network (CDN) to serve the site from edge locations globally.
 
-**Prerequisites:**  Node.js
+* **JavaScript (Fetch API)**: Communicates with the backend API to retrieve and display the visitor count.
 
+## CI/CD Pipeline
+This repository uses GitHub Actions to automate the deployment process.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+**How it works**:
+Whenever a change is pushed to the main branch:
+* **AWS Authentication**: GitHub logs into AWS using secure Repository Secrets.
+
+* **S3 Sync**: The latest files are synced to the S3 bucket.
+
+* **CloudFront Invalidation**: The CDN cache is cleared so that global users see the updates immediately instead of waiting for the cache to expire.
+
+## Project Structure
+This project uses the **AWS SAM CLI** to manage the lifecycle of this application.
+
+* **index.html**: The core structure of the resume.
+
+* **style.css**: Custom styling for a clean, modern look.
+
+* **script.js**: JavaScript logic to call the backend Lambda function.
+
+## Technical Highlights
+* **HTTPS Everywhere**: Secured via CloudFront with an SSL/TLS certificate.
+
+* **Cache Optimization**: Invalidation scripts ensure zero-downtime updates.
+
+* **Responsive Design**: Styled to look great on both desktop and mobile devices.
