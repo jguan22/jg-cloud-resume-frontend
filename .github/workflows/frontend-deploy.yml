@@ -12,6 +12,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # 1. Set up Node.js environment required to build the app
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm' # Speeds up subsequent runs by caching node_modules
+
+      # 2. Install dependencies (React, Vite, Tailwind, etc.)
+      - name: Install dependencies
+        run: npm ci
+
+      # 3. Compile the .tsx files into standard browser-readable HTML/JS
+      - name: Build production bundle
+        run: npm run build
+
+      # 4. Authenticate with AWS
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
@@ -19,8 +35,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
+      # 5. Sync ONLY the compiled 'dist' folder to the root of your S3 bucket
       - name: Deploy to S3
-        run: aws s3 sync . s3://jg-cloud-resume --delete --exclude ".git/*" --exclude ".github/*"
-      
+        run: aws s3 sync dist/ s3://jg-cloud-resume --delete
+
+      # 6. Clear CloudFront CDN edge caches
       - name: Invalidate CloudFront Cache
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
