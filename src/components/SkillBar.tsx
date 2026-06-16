@@ -62,48 +62,36 @@ export default function SkillBar({ lang }: SkillBarProps) {
                 <span>{group.category[lang]}</span>
               </h3>
 
-              {/* Skills Bars Stack */}
+              {/* Skills Card Stack (Descriptive & Contextual) */}
               <motion.div 
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, margin: "-80px" }}
-                className="space-y-4"
+                className="space-y-3.5"
               >
                 {group.skills.map((sk, skIdx) => (
                   <motion.div 
                     key={skIdx} 
                     variants={itemVariants}
-                    className="group"
+                    className="p-3 border border-slate-200 bg-white group hover:border-slate-900 hover:shadow-xs transition-all duration-200 rounded-none flex flex-col gap-1.5 relative cursor-default"
                   >
-                    {/* Labels row */}
-                    <div className="flex items-center justify-between text-xs mb-1.5 font-mono text-slate-700">
-                      <span className="font-black text-slate-900 uppercase tracking-wide">
+                    {/* Top Row: Name & Badge */}
+                    <div className="flex items-start justify-between gap-3">
+                      <span className="font-mono text-xs font-black text-slate-900 tracking-tight uppercase leading-snug">
                         {sk.name}
                       </span>
-                      <div className="flex items-center gap-2 text-[10px] text-slate-400 font-extrabold">
-                        <span>
-                          {sk.years} {lang === 'zh' ? '年经验' : 'YRS'}
-                        </span>
-                        <span>•</span>
-                        <span className="font-black text-slate-900">
-                          {sk.level}%
-                        </span>
-                      </div>
+                      <span className="shrink-0 px-1.5 py-0.5 text-[9px] font-mono font-bold uppercase rounded-none border border-slate-300 bg-slate-50 text-slate-500 group-hover:border-slate-900 group-hover:bg-slate-900 group-hover:text-white transition-all duration-200 leading-none">
+                        {sk.badge[lang]}
+                      </span>
                     </div>
 
-                    {/* Progress Track */}
-                    <div className="h-3 w-full bg-slate-205 rounded-none overflow-hidden relative border border-slate-300">
-                      <motion.div 
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${sk.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        className="h-full bg-slate-900 rounded-none relative"
-                      >
-                        {/* Shimmer overlay accent for visual feedback */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent w-full animate-shimmer" />
-                      </motion.div>
+                    {/* Bottom Row: Context comment */}
+                    <div className="text-[10px] font-mono text-slate-400 font-bold leading-normal tracking-wide uppercase flex items-start gap-1">
+                      <span className="text-slate-300 group-hover:text-slate-400 transition-colors select-none shrink-0">//</span>
+                      <span className="group-hover:text-slate-600 transition-colors break-words">
+                        {sk.context[lang]}
+                      </span>
                     </div>
                   </motion.div>
                 ))}

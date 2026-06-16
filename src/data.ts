@@ -29,41 +29,101 @@ export const PERSONAL_INFO = {
 export const SKILL_GROUPS: SkillGroup[] = [
   {
     category: {
-      zh: '系统与分布式软件工程 (Systems & Distributed)',
+      zh: '系统与分布式开发 (Systems & Distributed)',
       en: 'Systems & Distributed Engineering'
     },
     skills: [
-      { name: 'C / C++ (Pthreads / Multi-threading)', level: 95, years: 6 },
-      { name: 'Distributed Systems & gRPC / Protobuf', level: 92, years: 4 },
-      { name: 'Java / Python / SQL Core Systems', level: 94, years: 7 },
-      { name: 'IPC (Shared Memory / Semaphores / Message Queues)', level: 90, years: 4 },
-      { name: 'High-Throughput Analytical Pipelines', level: 91, years: 5 }
+      { 
+        name: 'C / C++ (Pthreads / Multi-threading)', 
+        badge: { zh: '核心精通', en: 'Core Mastery' },
+        context: { zh: '硕士核心课程与高并发系统项目实践', en: "Master's core work & high-concurrency systems" }
+      },
+      { 
+        name: 'Distributed Systems & gRPC / Protobuf', 
+        badge: { zh: '深度掌握', en: 'Advanced' },
+        context: { zh: '自主研发高性能分布式副本文件系统', en: 'Architected distributed file system from scratch' }
+      },
+      { 
+        name: 'Java / Python / SQL Core Systems', 
+        badge: { zh: '工业实践', en: 'Applied' },
+        context: { zh: '企业生产级数据库集成与自动化工具链', en: 'Production database integration & auto-tooling' }
+      },
+      { 
+        name: 'IPC (Shared Memory / Semaphores)', 
+        badge: { zh: '系统底层', en: 'OS Internals' },
+        context: { zh: '佐治亚理工研究生实验：多线程网关代理', en: 'GT Graduate work: Multi-threaded Proxy-Cache' }
+      },
+      { 
+        name: 'High-Throughput Analytical Pipelines', 
+        badge: { zh: '数据管道', en: 'Data Engine' },
+        context: { zh: '博士科学计算课题：TB级大规模脚本调度', en: 'Ph.D. research: Dispatching terabyte-scale scientific scripts' }
+      }
     ]
   },
   {
     category: {
-      zh: '云平台与自动化 DevOps (Cloud & DevOps Systems)',
+      zh: '云平台与自动化 DevOps (Cloud & DevOps)',
       en: 'Cloud Platform & DevOps Systems'
     },
     skills: [
-      { name: 'AWS (Lambda / S3 / DynamoDB / API Gateway)', level: 93, years: 4 },
-      { name: 'Amazon CloudFront CDN & Origin Access Control', level: 90, years: 3 },
-      { name: 'Terraform (Infrastructure as Code - IaC)', level: 88, years: 3 },
-      { name: 'CI/CD (GitHub Actions Flows / Test Suite Execution)', level: 92, years: 4 },
-      { name: 'Docker / Linux Kernel System Integration', level: 86, years: 5 }
+      { 
+        name: 'AWS (Lambda / S3 / DynamoDB / API Gateway)', 
+        badge: { zh: 'Serverless', en: 'Serverless' },
+        context: { zh: 'MEI 企业生产集群与云端自动化部署', en: 'MEI production clusters & cloud resume setup' }
+      },
+      { 
+        name: 'Amazon CloudFront & Origin Access Control', 
+        badge: { zh: '全球分发', en: 'CDN OAC' },
+        context: { zh: '构建静态边缘托管与受控源站访问机制', en: 'Secure static web hosting & edge delivery' }
+      },
+      { 
+        name: 'Terraform (Infrastructure as Code - IaC)', 
+        badge: { zh: '基础代码化', en: 'IaC' },
+        context: { zh: '100% 声明式定义云端服务以实现一键部署', en: '100% declarative cloud provisioning' }
+      },
+      { 
+        name: 'CI/CD (GitHub Actions Flows)', 
+        badge: { zh: '持续集成', en: 'CI/CD' },
+        context: { zh: '严密流水线：自动化测试套件与安全部署', en: 'Strict pipelines: multi-tier build & deploy actions' }
+      },
+      { 
+        name: 'Docker & Linux Environment Integration', 
+        badge: { zh: '容器化', en: 'Containers' },
+        context: { zh: '多架构镜像混合构建与底层运行沙箱配置', en: 'Multi-arch builds & runtime sandbox optimization' }
+      }
     ]
   },
   {
     category: {
-      zh: '数据库与智能大语言应用 (Databases & GenAI RAG)',
+      zh: '数据库与智能大语言应用 (Databases & AI)',
       en: 'Databases & GenAI RAG'
     },
     skills: [
-      { name: 'PostgreSQL / MySQL Schema Optimization', level: 90, years: 5 },
-      { name: 'ChromaDB / Vector Database Integrations', level: 87, years: 2 },
-      { name: 'GenAI RAG (Gemini SDK / Semantic Ingestion)', level: 89, years: 2 },
-      { name: 'Hibernate ORM / Database Relational Scaling', level: 88, years: 4 },
-      { name: 'Modern Package Tooling (uv / poetry / pipenv)', level: 92, years: 3 }
+      { 
+        name: 'PostgreSQL / MySQL Schema Optimization', 
+        badge: { zh: '关系优化', en: 'Relational' },
+        context: { zh: '基因组千万级关系数据检索性能提升 80%', en: 'Optimized MEI genomic queries, cutting latency by 80%' }
+      },
+      { 
+        name: 'ChromaDB / Vector Database Integrations', 
+        badge: { zh: '向量检索', en: 'Vector DB' },
+        context: { zh: '精细化自动报价系统：规则库检索与缓存', en: 'High-precision pricing retrieval & caching layer' }
+      },
+      { 
+        name: 'GenAI RAG (Gemini SDK / Semantic Ingestion)', 
+        badge: { zh: '智能代理', en: 'AI Agent' },
+        context: { zh: '自研科研大纲提案与成本预测智能生成流', en: 'Automated study proposal & cost analysis generators' }
+      },
+      { 
+        name: 'Hibernate ORM / Database Relational Scaling', 
+        badge: { zh: '模型重构', en: 'ORM / Scaling' },
+        context: { zh: '面向大规模业务逻辑进行冗余消除与调优', en: 'Performance tuning & schema refactoring on key pipelines' }
+      },
+      { 
+        name: 'Modern Package Tooling (uv / poetry / pipenv)', 
+        badge: { zh: '工程依赖', en: 'Workflows' },
+        context: { zh: '特定引物定向优化引擎 Python 依赖精准管护', en: 'Rigorous dependency mapping for scientific software' }
+      }
     ]
   }
 ];

@@ -48,7 +48,7 @@ export default function ExportModal({ isOpen, onClose, lang }: ExportModalProps)
     md += `## Professional Skills / 技能清单\n\n`;
     SKILL_GROUPS.forEach((group) => {
       md += `### ${group.category[lang]}\n`;
-      const skillsStr = group.skills.map((s) => `${s.name} (${s.level}%, ${s.years} yrs)`).join(', ');
+      const skillsStr = group.skills.map((s) => `- **${s.name}** [${s.badge[lang]}] — *${s.context[lang]}*`).join('\n');
       md += `${skillsStr}\n\n`;
     });
 

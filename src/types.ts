@@ -69,8 +69,14 @@ export interface SkillGroup {
   };
   skills: {
     name: string;
-    level: number; // 0-100 percentage
-    years: number;
+    badge: {
+      zh: string;
+      en: string;
+    };
+    context: {
+      zh: string;
+      en: string;
+    };
   }[];
 }
 
