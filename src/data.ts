@@ -184,7 +184,7 @@ export const PROJECTS: Project[] = [
     tags: ['C++', 'gRPC', 'Protocol Buffers', 'Linux (inotify)', 'Concurrency'],
     category: 'systems',
     demoUrl: '#demo',
-    githubUrl: 'https://github.com/jguan22',
+    githubUrl: 'https://github.com/jguan22/High-Concurrency-Distributed-File-System',
     metrics: [
       { label: { zh: '同步延迟降低', en: 'Sync Latency' }, value: '-35%' },
       { label: { zh: '数据吞吐提升', en: 'Throughput' }, value: '+60%' },
@@ -220,7 +220,7 @@ export const PROJECTS: Project[] = [
     tags: ['C', 'POSIX Threads', 'Shared Memory', 'IPC', 'libcurl'],
     category: 'systems',
     demoUrl: '#demo',
-    githubUrl: 'https://github.com/jguan22',
+    githubUrl: 'https://github.com/jguan22/Multi-Threaded-Proxy-Cache-System',
     metrics: [
       { label: { zh: '并发控制模型', en: 'Threading Model' }, value: 'Boss-Worker' },
       { label: { zh: '系统复制开销', en: 'Data Copy' }, value: 'Zero-Copy' },
