@@ -189,7 +189,7 @@ export default function Guestbook({ lang }: GuestbookProps) {
             {/* MESSAGE LEAVE FORM */}
             <div className="rounded-none border border-slate-350 bg-white p-6 shadow-sm">
               <h3 className="font-mono text-xs font-black text-slate-900 mb-4 uppercase tracking-widest flex items-center justify-between border-b border-slate-200 pb-2">
-                <span>// {lang === 'zh' ? '给管劼昊留言' : 'Submit log to Jiehao'}</span>
+                <span>// {lang === 'zh' ? '给 Jiehao Guan 留言' : 'Submit log to Jiehao'}</span>
                 {submitted && (
                   <span className="text-[9px] font-mono font-black text-slate-900 flex items-center gap-1 bg-slate-100 px-2 py-0.5 rounded-none border border-slate-900 uppercase">
                     <ShieldCheck className="h-3.5 w-3.5" />

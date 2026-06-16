@@ -2,15 +2,15 @@ import { Project, Experience, Education, SkillGroup } from './types';
 
 export const PERSONAL_INFO = {
   name: {
-    zh: '管劼昊 (Jiehao Guan)',
+    zh: '管劼昊',
     en: 'Jiehao Guan'
   },
   title: {
-    zh: '系统与分布式软件工程师 / 云架构专家',
-    en: 'Systems & Distributed Software Engineer / Cloud Architect'
+    zh: '系统软件工程师',
+    en: 'Systems & Software Engineer'
   },
   about: {
-    zh: '资深系统软件工程专家，拥有佐治亚理工学院 (Georgia Tech) 计算机科学硕士学位与威斯康星大学麦迪逊分校 (UW-Madison) 生物系统工程博士学位。专注于设计高并发、健壮容错的分布式系统与高能效 Serverless 混合架构。在行业中熟练应用 Java/C++/Python/SQL，实操落地大规模基因组关系型数据库架构、全自动化定价交易微服务、基于高效 RAG 与 Gemini 生态的技术决策系统并实现 100% 的基础设施代码化 (Terraform IaC/DevOps)。致力于学术前沿算法在工程化生产领域的性能变现。',
+    zh: '系统软件工程专家师，拥有佐治亚理工学院 (Georgia Tech) 计算机科学硕士学位与威斯康星大学麦迪逊分校 (UW-Madison) 生物系统工程博士学位。专注于设计高并发、健壮容错的分布式系统与高能效 Serverless 混合架构。在行业中熟练应用 Java/C++/Python/SQL，实操落地大规模基因组关系型数据库架构、全自动化定价交易微服务、基于高效 RAG 与 Gemini 生态的技术决策系统并实现 100% 的基础设施代码化 (Terraform IaC/DevOps)。致力于学术前沿算法在工程化生产领域的性能变现。',
     en: 'Performance-driven Systems Software Engineer holding a Master of Science in Computer Science from Georgia Institute of Technology and a Ph.D. in Biological Systems Engineering from UW-Madison. Proficient in Java, C++, Python, and SQL, with rigorous hands-on depth in architecting fault-tolerant distributed systems, scaling transactional relational engines, automating mission-critical AWS Serverless clusters, and crafting production-grade Gemini RAG pipelines.'
   },
   location: {
@@ -21,8 +21,8 @@ export const PERSONAL_INFO = {
   github: 'https://github.com/jguan22',
   linkedin: 'https://www.linkedin.com/in/jiehao-guan/',
   status: {
-    zh: '// SYSTEMS & CLOUD ENGINEER',
-    en: '// SYSTEMS & CLOUD ENGINEER'
+    zh: '// SYSTEMS & SOFTWARE ENGINEER',
+    en: '// SYSTEMS & SOFTWARE ENGINEER'
   }
 };
 

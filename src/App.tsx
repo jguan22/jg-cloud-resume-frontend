@@ -263,8 +263,8 @@ export default function App() {
 
               {/* Title & Core Stack */}
               <div className="space-y-2">
-                <h1 className="font-display text-5xl font-black leading-none tracking-tighter text-slate-900 sm:text-6xl md:text-7xl lg:text-8xl uppercase">
-                  {lang === 'zh' ? '管劼昊' : 'Jiehao Guan'}
+                <h1 className="font-display text-5xl font-black leading-none tracking-tighter text-slate-900 sm:text-6xl md:text-7xl lg:text-8xl">
+                  {PERSONAL_INFO.name[lang]}
                   <span className="block mt-4 font-mono text-base sm:text-lg font-bold tracking-widest text-slate-500 normal-case">
                     [ {PERSONAL_INFO.title[lang]} ]
                   </span>
