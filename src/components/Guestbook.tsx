@@ -28,30 +28,7 @@ export default function Guestbook({ lang }: GuestbookProps) {
 
   // Load initial preset message list and local storage messages
   useEffect(() => {
-    const defaultMessages: VisitorMessage[] = [
-      {
-        id: 'preset1',
-        name: 'Alex Mercer',
-        email: 'alex@aws-consultants.net',
-        company: 'AWS Cloud Partners',
-        message: lang === 'zh' 
-          ? '劼昊开发的 AWS Serverless 访客计数架构运行得非常流畅！其基础设施全 Terraform 编写，GitHub Actions 自动化 CI/CD 各环节极其严密标准，是非常优秀的云计算开发样板。' 
-          : 'Excellent design! Jiehao’s AWS Serverless visitor counter structure runs flawlessly. The Infrastructure is fully declarative via Terraform, and his GitHub Actions dual pipelines represent professional DevOps practices.',
-        timestamp: '2026-06-11 10:14',
-        badgeColor: 'bg-blue-50 border-blue-200 text-blue-900'
-      },
-      {
-        id: 'preset2',
-        name: 'Jenkins Sarah',
-        email: 's.jenkins@wisc.edu',
-        company: 'UW-Madison Science Lab',
-        message: lang === 'zh'
-          ? '劼昊在科研组里编写的大规模数值模拟与数据计算模型极大加速了我们的实验室研发效率，在分布式算力环境下性能表现卓越！'
-          : 'Jiehao’s high-throughput numerical compute pipelines significantly boosted our physical models. The system has made managing and executing TB-scale data operations extremely straightforward and robust.',
-        timestamp: '2026-06-13 18:42',
-        badgeColor: 'bg-indigo-50 border-indigo-250 text-indigo-900'
-      }
-    ];
+    const defaultMessages: VisitorMessage[] = [];
 
     const stored = localStorage.getItem('jg_portfolio_greetings');
     if (stored) {

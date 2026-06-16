@@ -29,9 +29,9 @@ import KvMemNetDetail from './components/KvMemNetDetail';
 
 export default function App() {
   const [lang, setLang] = useState<Language>(() => {
-    // Get stored locale or default to 'zh'
+    // Get stored locale or default to 'en'
     const stored = localStorage.getItem('jg_portfolio_lang');
-    return (stored === 'zh' || stored === 'en') ? stored : 'zh';
+    return (stored === 'zh' || stored === 'en') ? stored : 'en';
   });
 
   const [activeSection, setActiveSection] = useState('about');
